@@ -1,0 +1,107 @@
+[
+  {
+    "id": "s01",
+    "title": "The Whispering Lamp Post",
+    "body": "Every Halloween, the old lamp post at the corner of Elm Street flickers three times before going dark. The children say it is the ghost of a street-sweeper who still tends his nightly route. No one dares walk past it after the third flicker.",
+    "tags": ["street", "ghost"],
+    "emoji": "🕯️"
+  },
+  {
+    "id": "s02",
+    "title": "The House That Smelled of Cinnamon",
+    "body": "The house at number nine always smells of cinnamon and warm pie on Halloween night, even though no one has lived there for thirty years. Trick-or-treaters who knock at the door find a bowl of candy on the porch, freshly filled, every single year. Nobody has ever seen who puts it there.",
+    "tags": ["house", "candy"],
+    "emoji": "🏚️"
+  },
+  {
+    "id": "s03",
+    "title": "The Park Bench Stranger",
+    "body": "A tall figure in a long coat sits on the bench in Hollow Park each Halloween, reading a newspaper from 1887. If you say 'good evening', he tips his hat and vanishes between one blink and the next. The newspaper is always left behind, and every headline is about a Halloween long past.",
+    "tags": ["park", "ghost"],
+    "emoji": "🌳"
+  },
+  {
+    "id": "s04",
+    "title": "The Graveyard Lanterns",
+    "body": "On Halloween night, tiny blue lanterns appear among the headstones of Mosswood Cemetery, drifting slowly from grave to grave. The groundskeeper says they are will-o'-wisps guiding the sleeping residents to the gate and back before dawn. Children who count them always reach a different number.",
+    "tags": ["cemetery", "ghost"],
+    "emoji": "⚰️"
+  },
+  {
+    "id": "s05",
+    "title": "The Fog That Remembers",
+    "body": "The fog that rolls in on Halloween is not like ordinary fog; it carries the faint scent of pumpkin and candle smoke. People walking through it sometimes hear their own names called in a voice they almost recognise. By morning, the fog is gone and a single orange leaf rests on every doorstep.",
+    "tags": ["fog", "pumpkin"],
+    "emoji": "🌫️"
+  },
+  {
+    "id": "s06",
+    "title": "The Shadow on the Wall",
+    "body": "No matter how many children walk down Briar Lane, one extra shadow always appears on the old stone wall — longer than the rest and shaped like a child in a pointed hat. It keeps perfect pace with the group and disappears the moment anyone looks directly at the wall. The lane has been renamed 'Shadow Alley' by every kid in the neighbourhood.",
+    "tags": ["shadow", "street"],
+    "emoji": "👻"
+  },
+  {
+    "id": "s07",
+    "title": "The Witch of Maple Corner",
+    "body": "The woman on Maple Corner has a garden full of herbs that glow faintly silver on Halloween night. She hands out caramel apples wrapped in paper printed with each child's name — somehow already written before they arrive. Her cat watches from the window with eyes that shift from green to gold and back again.",
+    "tags": ["witch", "house"],
+    "emoji": "🧙‍♀️"
+  },
+  {
+    "id": "s08",
+    "title": "The Pumpkin That Moved",
+    "body": "Mrs. Holloway carves the same pumpkin face every year and places it on her front step at dusk. By midnight, the pumpkin has always scooted three inches to the left, leaving a trail in the frost. She has set up cameras twice, and both times the footage shows nothing but the pumpkin — already three inches over.",
+    "tags": ["pumpkin", "house"],
+    "emoji": "🎃"
+  },
+  {
+    "id": "s09",
+    "title": "The Spider's Gift",
+    "body": "A huge golden spider builds its web across the gate of the old Fairfield house every Halloween without fail. Trick-or-treaters who pass beneath the web find an extra piece of candy in their bag that they did not receive from any door. The candy is always their favourite kind.",
+    "tags": ["spider", "candy"],
+    "emoji": "🕷️"
+  },
+  {
+    "id": "s10",
+    "title": "The Moon That Followed",
+    "body": "On the clearest Halloween nights, the full moon seems to follow the trick-or-treat group from street to street, always perfectly centred above them no matter which way they turn. Old Mr. Crane says the moon is keeping watch to make sure everyone gets home safely. The children prefer his explanation to all the others they have heard.",
+    "tags": ["moon", "street"],
+    "emoji": "🌕"
+  },
+  {
+    "id": "s11",
+    "title": "The Candy That Counted Itself",
+    "body": "Every year, the children on Cedar Row tip their candy hauls onto the floor to count them — and every year, the total is exactly 99 pieces, no matter how many or how few houses they visited. They have tried visiting only two houses and they have tried visiting twenty. It is always 99. No one has ever figured out where the extra pieces come from.",
+    "tags": ["candy", "shadow"],
+    "emoji": "🍬"
+  },
+  {
+    "id": "s12",
+    "title": "The Wind That Whispered Names",
+    "body": "The wind on Halloween night blows in from the north and carries fragments of whispered conversations from years gone by. If you stand very still and listen, you can hear children from decades past shouting 'trick or treat' on streets that no longer exist. The sound fades with each step you take toward home.",
+    "tags": ["wind", "fog"],
+    "emoji": "💨"
+  },
+  {
+    "id": "s13",
+    "title": "The Black Cat's Warning",
+    "body": "A sleek black cat sits at the entrance to Dunmore Park every Halloween, staring at the path ahead. Children who follow its gaze always find the best-decorated house on the route just around the corner. But if the cat turns and walks away, everyone agrees it is time to head home.",
+    "tags": ["park", "shadow"],
+    "emoji": "🐱"
+  },
+  {
+    "id": "s14",
+    "title": "The Haunted Corner Store",
+    "body": "The old corner store on Wyndham Street has been closed for fifteen years, yet its lights flicker on every Halloween from eight until nine. Children press their noses to the dusty glass and see candy jars on the shelves, fully stocked and neatly labelled. The next morning, the shelves are bare and dark once more.",
+    "tags": ["house", "candy", "ghost"],
+    "emoji": "🏪"
+  },
+  {
+    "id": "s15",
+    "title": "The Skeleton at the Gate",
+    "body": "The plastic skeleton that the Abernathys hang on their gate every Halloween has a habit of turning its head toward you as you pass, even when the air is perfectly still. The family insists it is just the breeze, and they might be right. But the skeleton's empty eye sockets seem to follow you all the way to the end of the block.",
+    "tags": ["cemetery", "house"],
+    "emoji": "💀"
+  }
+]

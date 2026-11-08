@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎃 Trick-or-Treat Planner</title>
+  <meta name="description" content="Plan your perfect Halloween trick-or-treat route with weather forecasts and spooky stories." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="🎃 Trick-or-Treat Planner" />
+  <meta property="og:description" content="Plan your perfect Halloween trick-or-treat route with weather forecasts and spooky stories." />
+  <meta property="og:type" content="website" />
+
+  <!-- Leaflet CSS (unpkg CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="anonymous"
+  />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================
+       Header
+       ======================================================== -->
+  <header>
+    <h1>🎃 Trick-or-Treat Planner</h1>
+    <p class="tagline">Plan your Halloween route with live weather &amp; spooky stories</p>
+  </header>
+
+  <!-- ========================================================
+       Main Content
+       ======================================================== -->
+  <main>
+
+    <!-- Print-only header (hidden on screen) -->
+    <div class="print-header" style="display:none">
+      <h2>🎃 Trick-or-Treat Route Checklist</h2>
+      <p>Printed from Trick-or-Treat Planner</p>
+    </div>
+
+    <!-- ====================================================
+         Controls Panel
+         ==================================================== -->
+    <section id="controls" aria-label="Route controls">
+
+      <!-- Location row -->
+      <div class="controls-row">
+        <button
+          id="btn-locate"
+          class="btn-secondary"
+          aria-label="Use my current GPS location as start point"
+        >
+          📍 Use My Location
+        </button>
+      </div>
+
+      <!-- Generation row -->
+      <div class="controls-row">
+        <label for="stop-count" style="font-size:0.9rem; color:var(--color-text-muted); white-space:nowrap;">
+          Stops:
+        </label>
+        <select id="stop-count" aria-label="Number of stops to generate">
+          <option value="5">5</option>
+          <option value="6" selected>6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+
+        <button
+          id="btn-generate"
+          class="btn-primary"
+          aria-label="Generate trick-or-treat route from start point"
+        >
+          🗺️ Generate Route
+        </button>
+      </div>
+
+      <!-- Optimize row -->
+      <div class="controls-row">
+        <button
+          id="btn-optimize"
+          class="btn-secondary"
+          aria-label="Re-optimize stop order using nearest-neighbor algorithm"
+          disabled
+        >
+          ⚡ Optimize Route
+        </button>
+
+        <label for="trip-start" style="font-size:0.9rem; color:var(--color-text-muted); white-space:nowrap;">
+          Start time:
+        </label>
+        <input
+          type="time"
+          id="trip-start"
+          value="18:00"
+          aria-label="Trip start time"
+        />
+      </div>
+
+      <!-- Filter row -->
+      <div class="controls-row filters">
+        <label class="filter-label" for="filter-lit">
+          <input type="checkbox" id="filter-lit" aria-describedby="filter-lit-desc" />
+          <span class="filter-label-text" id="filter-lit-desc">🔦 Lit streets only</span>
+        </label>
+
+        <label class="filter-label" for="filter-rain">
+          <input type="checkbox" id="filter-rain" aria-describedby="filter-rain-desc" />
+          <span class="filter-label-text" id="filter-rain-desc">☔ Avoid rainy hours</span>
+        </label>
+      </div>
+
+      <!-- Active filter indicator -->
+      <div id="active-filters-bar" role="status" aria-live="polite"></div>
+
+      <!-- Coordinates display -->
+      <p id="coords-display" aria-live="polite">Click the map or use GPS to set your start point.</p>
+
+    </section>
+
+    <!-- ====================================================
+         Map
+         ==================================================== -->
+    <div
+      id="map"
+      role="application"
+      aria-label="Trick-or-treat route map — click to set start point"
+    ></div>
+
+    <!-- ====================================================
+         Share Bar
+         ==================================================== -->
+    <div id="share-bar" aria-label="Print and share actions">
+      <button
+        id="btn-print"
+        class="btn-outline"
+        aria-label="Open print dialog with route checklist"
+      >
+        🖨️ Print Checklist
+      </button>
+      <button
+        id="btn-share"
+        class="btn-outline"
+        aria-label="Copy sharable link to clipboard"
+      >
+        🔗 Share Route
+      </button>
+    </div>
+
+    <!-- ====================================================
+         Loading Spinner
+         ==================================================== -->
+    <div
+      id="spinner"
+      aria-live="polite"
+      aria-busy="true"
+      hidden
+    >
+      Generating your route…
+    </div>
+
+    <!-- ====================================================
+         Stops List
+         ==================================================== -->
+    <section id="stops-list" aria-label="Trick-or-treat stops"></section>
+
+  </main>
+
+  <!-- ========================================================
+       Toast notifications
+       ======================================================== -->
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ========================================================
+       Leaflet JS (unpkg CDN)
+       ======================================================== -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2GqWE="
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- App logic -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

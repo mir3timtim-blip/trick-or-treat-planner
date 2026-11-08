@@ -1,0 +1,800 @@
+/* ============================================================
+   CSS Custom Properties — Halloween Palette
+   ============================================================ */
+:root {
+  --color-orange: #ff7b00;
+  --color-orange-light: #ffaa44;
+  --color-orange-dim: #b35500;
+  --color-black: #0d0d0d;
+  --color-purple: #6b21a8;
+  --color-purple-light: #a855f7;
+  --color-bg: #1a0a00;
+  --color-surface: #2a1200;
+  --color-surface-2: #3a1e00;
+  --color-text: #f5e6cc;
+  --color-text-muted: #a08060;
+  --color-accent: var(--color-orange);
+  --color-danger: #ef4444;
+  --color-rain: #3b82f6;
+  --color-unlit: #6b7280;
+  --color-success: #22c55e;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 12px rgba(255, 123, 0, 0.3);
+
+  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+
+  --transition: 200ms ease;
+}
+
+/* ============================================================
+   Reset / Base
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-orange-light);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  min-height: 44px;
+  min-width: 44px;
+  transition: background-color var(--transition), transform var(--transition),
+    box-shadow var(--transition);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--color-orange-light);
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+header {
+  background: linear-gradient(135deg, #2a0a00 0%, #1a0050 100%);
+  border-bottom: 2px solid var(--color-orange-dim);
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  color: var(--color-orange);
+  text-shadow: 0 0 20px rgba(255, 123, 0, 0.6);
+  letter-spacing: 0.02em;
+}
+
+header p.tagline {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   Layout — Mobile First (single column)
+   ============================================================ */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Controls Panel
+   ============================================================ */
+#controls {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.controls-row.filters {
+  gap: var(--space-md);
+}
+
+/* Primary action buttons */
+.btn-primary {
+  background: var(--color-orange);
+  color: var(--color-black);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-orange-light);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Secondary action buttons */
+.btn-secondary {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-orange-dim);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-purple);
+  border-color: var(--color-purple-light);
+}
+
+/* Outline buttons */
+.btn-outline {
+  background: transparent;
+  color: var(--color-orange);
+  border: 1px solid var(--color-orange-dim);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: rgba(255, 123, 0, 0.12);
+}
+
+/* Stop count selector */
+#stop-count {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-orange-dim);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-family: inherit;
+  font-size: 0.9rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+#stop-count:focus-visible {
+  outline: 3px solid var(--color-orange-light);
+  outline-offset: 2px;
+}
+
+/* Trip start time picker */
+#trip-start {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-orange-dim);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-family: inherit;
+  font-size: 0.9rem;
+  min-height: 44px;
+}
+
+#trip-start:focus-visible {
+  outline: 3px solid var(--color-orange-light);
+  outline-offset: 2px;
+}
+
+/* Coordinates display */
+#coords-display {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  padding: var(--space-xs) 0;
+}
+
+/* ============================================================
+   Filter Checkboxes
+   ============================================================ */
+.filter-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  min-height: 44px;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition);
+}
+
+.filter-label:hover {
+  background: rgba(255, 123, 0, 0.08);
+}
+
+.filter-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--color-orange-dim);
+  border-radius: 4px;
+  background: var(--color-surface);
+  cursor: pointer;
+  position: relative;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.filter-label input[type="checkbox"]:checked {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.filter-label input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid var(--color-black);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.filter-label input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--color-orange-light);
+  outline-offset: 2px;
+}
+
+.filter-label.filter-active {
+  background: rgba(255, 123, 0, 0.15);
+  border-radius: var(--radius-sm);
+}
+
+.filter-label.filter-active .filter-label-text::after {
+  content: " ✓";
+  color: var(--color-orange);
+  font-size: 0.8em;
+}
+
+/* Active filters indicator strip */
+#active-filters-bar {
+  display: none;
+  background: rgba(255, 123, 0, 0.1);
+  border: 1px solid var(--color-orange-dim);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.8rem;
+  color: var(--color-orange-light);
+}
+
+#active-filters-bar.visible {
+  display: block;
+}
+
+/* ============================================================
+   Map
+   ============================================================ */
+#map {
+  height: 400px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-orange-dim);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* ============================================================
+   Spinner
+   ============================================================ */
+#spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+#spinner::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-surface-2);
+  border-top-color: var(--color-orange);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   Stops List
+   ============================================================ */
+#stops-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ============================================================
+   Stop Cards
+   ============================================================ */
+.stop-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-2);
+  border-left: 4px solid var(--color-orange);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: box-shadow var(--transition), transform var(--transition);
+  cursor: grab;
+}
+
+.stop-card:hover {
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.stop-card:active {
+  cursor: grabbing;
+}
+
+.stop-card.dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+.stop-card.drag-over {
+  border-color: var(--color-purple-light);
+  box-shadow: 0 0 0 2px var(--color-purple-light);
+}
+
+.stop-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-xs);
+}
+
+.stop-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.stop-arrival {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.stop-arrival time {
+  font-family: var(--font-mono);
+  color: var(--color-orange-light);
+}
+
+/* Weather Row */
+.stop-weather {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  padding: var(--space-xs) 0;
+  border-top: 1px solid var(--color-surface-2);
+  border-bottom: 1px solid var(--color-surface-2);
+  margin: var(--space-sm) 0;
+}
+
+.weather-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.weather-temp {
+  color: var(--color-text);
+}
+
+.weather-precip {
+  color: var(--color-rain);
+}
+
+.weather-unavailable {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Story Block */
+.stop-story {
+  margin-top: var(--space-sm);
+}
+
+.story-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.story-emoji {
+  font-size: 1.2rem;
+}
+
+.story-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-purple-light);
+}
+
+.story-body {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Badges */
+.badge-rain,
+.badge-unlit {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px var(--space-xs);
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+.badge-rain {
+  background: var(--color-rain);
+  color: #fff;
+}
+
+.badge-unlit {
+  background: var(--color-unlit);
+  color: #fff;
+}
+
+/* Drag handle hint */
+.stop-drag-hint {
+  position: absolute;
+  top: 50%;
+  right: var(--space-md);
+  transform: translateY(-50%);
+  color: var(--color-surface-2);
+  font-size: 1.2rem;
+  pointer-events: none;
+  transition: color var(--transition);
+}
+
+.stop-card:hover .stop-drag-hint {
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   Share Bar
+   ============================================================ */
+#share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+}
+
+/* ============================================================
+   Toast Notifications
+   ============================================================ */
+#toast {
+  position: fixed;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-orange-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-card);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease, transform 250ms ease;
+  max-width: 90vw;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+#toast.toast-error {
+  border-color: var(--color-danger);
+  background: #2a0505;
+}
+
+#toast.toast-success {
+  border-color: var(--color-success);
+  background: #052a10;
+}
+
+/* ============================================================
+   Share URL fallback input
+   ============================================================ */
+#share-url-input {
+  width: 100%;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-orange-dim);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin-top: var(--space-sm);
+}
+
+/* ============================================================
+   Responsive — Two-column layout ≥ 768px
+   ============================================================ */
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "controls map"
+      "controls stops"
+      "share    stops"
+      ".        stops";
+    gap: var(--space-md);
+    align-items: start;
+    padding: var(--space-lg);
+  }
+
+  #controls {
+    grid-area: controls;
+    position: sticky;
+    top: var(--space-md);
+  }
+
+  #map {
+    grid-area: map;
+    height: 420px;
+  }
+
+  #stops-list {
+    grid-area: stops;
+  }
+
+  #share-bar {
+    grid-area: share;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 380px 1fr;
+  }
+
+  #map {
+    height: 480px;
+  }
+}
+
+/* ============================================================
+   Dark mode overrides — maintain ≥ 4.5:1 contrast
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  /* The default design is already dark; these ensure minimum
+     contrast is met even if the OS forces a light-mode
+     override to be ignored. No-op for most users. */
+  :root {
+    --color-text: #f5e6cc;
+    --color-text-muted: #b09070;
+    --color-bg: #1a0a00;
+    --color-surface: #2a1200;
+    --color-surface-2: #3a1e00;
+  }
+}
+
+/* ============================================================
+   Print Styles
+   ============================================================ */
+@media print {
+  /* Hide everything interactive */
+  header,
+  #controls,
+  #map,
+  #share-bar,
+  #toast,
+  #spinner,
+  #active-filters-bar,
+  .story-body,
+  .weather-icon,
+  .stop-drag-hint,
+  .badge-rain,
+  .badge-unlit {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-family: Georgia, serif;
+    font-size: 12pt;
+  }
+
+  main {
+    display: block;
+    padding: 0;
+    max-width: none;
+  }
+
+  #stops-list {
+    display: block;
+  }
+
+  /* Print header */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 16pt;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 8pt;
+  }
+
+  .print-header h2 {
+    font-size: 18pt;
+    margin-bottom: 4pt;
+  }
+
+  .print-header p {
+    font-size: 10pt;
+    color: #555;
+  }
+
+  /* Each stop card becomes a print item */
+  .stop-card {
+    background: none;
+    border: none;
+    border-left: none;
+    border-bottom: 1pt solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 8pt 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    cursor: default;
+  }
+
+  .stop-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Print checklist line format: ☐ [HH:MM] Stop Name — 🌡 Temp — ☔ Precip% */
+  .print-checklist-line {
+    display: flex;
+    align-items: baseline;
+    gap: 8pt;
+    font-size: 11pt;
+  }
+
+  .print-checkbox {
+    font-size: 14pt;
+    flex-shrink: 0;
+  }
+
+  .print-arrival {
+    font-family: monospace;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .print-name {
+    font-weight: bold;
+    flex: 1;
+  }
+
+  .print-weather-summary {
+    font-size: 10pt;
+    color: #444;
+    white-space: nowrap;
+  }
+
+  .stop-number {
+    display: none;
+  }
+
+  .stop-name {
+    font-size: 12pt;
+  }
+
+  .stop-arrival {
+    font-size: 10pt;
+  }
+
+  .stop-weather {
+    border: none;
+    font-size: 10pt;
+    padding: 2pt 0;
+    margin: 2pt 0;
+  }
+
+  .story-title {
+    font-size: 9pt;
+    color: #666;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
