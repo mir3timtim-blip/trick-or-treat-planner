@@ -351,6 +351,10 @@ main {
   font-size: 0.9rem;
 }
 
+#spinner[hidden] {
+  display: none;
+}
+
 #spinner::before {
   content: "";
   width: 20px;
